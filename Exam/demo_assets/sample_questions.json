@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "question": "AI stands for?",
+    "type": "mcq",
+    "options": ["Artificial Intelligence", "Applied Informatics", "Automated Input", "Analog Interface"],
+    "answer": "Artificial Intelligence"
+  },
+  {
+    "id": 2,
+    "question": "Which Python library is commonly used for computer vision?",
+    "type": "mcq",
+    "options": ["OpenCV", "Pandas", "Seaborn", "Requests"],
+    "answer": "OpenCV"
+  },
+  {
+    "id": 3,
+    "question": "MediaPipe is commonly used for which proctoring-related task?",
+    "type": "mcq",
+    "options": ["Face landmarks", "Database backup", "Email delivery", "CSS rendering"],
+    "answer": "Face landmarks"
+  },
+  {
+    "id": 4,
+    "question": "Write one benefit of automated proctoring in remote exams.",
+    "type": "text",
+    "answer": "reduces cheating"
+  }
+]

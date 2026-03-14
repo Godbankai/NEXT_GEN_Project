@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "AI Smart Exam Monitoring" }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: "#07111f",
+                        mist: "#e2e8f0",
+                        glow: "#f97316",
+                        ocean: "#0f766e",
+                        slateblue: "#1d4ed8"
+                    },
+                    boxShadow: {
+                        panel: "0 20px 60px rgba(15, 23, 42, 0.18)"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(15,118,110,0.22),_transparent_35%),linear-gradient(135deg,_#eff6ff,_#f8fafc_35%,_#fff7ed)] text-slate-800">
+    {% block content %}{% endblock %}
+    <script src="/static/js/app.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

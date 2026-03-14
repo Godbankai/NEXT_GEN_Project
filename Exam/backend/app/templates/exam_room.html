@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="mx-auto max-w-7xl px-4 py-5">
+    <section class="grid gap-6 xl:grid-cols-[1.35fr_0.65fr]">
+        <div class="rounded-[2rem] bg-white/90 p-6 shadow-panel">
+            <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between"><div><p class="text-sm font-semibold uppercase tracking-[0.25em] text-ocean">Secure Exam Room</p><h1 id="examTitle" class="mt-2 text-3xl font-black text-ink">Loading exam...</h1><p id="examDescription" class="mt-2 text-slate-600"></p></div><div class="rounded-3xl bg-ink px-5 py-4 text-white"><p class="text-xs uppercase tracking-[0.3em] text-slate-300">Time Left</p><p id="countdown" class="mt-1 text-3xl font-black">--:--</p></div></div>
+            <div id="lockBanner" class="mt-4 hidden rounded-2xl bg-rose-50 p-4 text-sm font-semibold text-rose-700"></div>
+            <div class="mt-6 rounded-3xl bg-slate-50 p-5"><p class="font-semibold text-slate-700">Instructions</p><p id="examInstructions" class="mt-2 whitespace-pre-wrap text-sm leading-7 text-slate-600"></p></div>
+            <form id="examForm" class="mt-6 space-y-6"></form>
+            <div class="mt-8 flex flex-wrap gap-3"><button id="submitExamBtn" type="button" class="rounded-2xl bg-slateblue px-6 py-3 text-sm font-semibold text-white">Submit Exam</button><button id="panicSaveBtn" type="button" class="rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700">Save local answers</button></div>
+            <p id="examStatus" class="mt-4 text-sm font-medium"></p>
+        </div>
+        <aside class="space-y-6">
+            <section class="rounded-[2rem] bg-white/90 p-5 shadow-panel">
+                <div class="flex items-center justify-between"><div><p class="text-sm font-semibold uppercase tracking-[0.25em] text-glow">Live Proctoring</p><h2 class="mt-2 text-2xl font-black text-ink">AI monitor</h2></div><span id="riskBadge" class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em] text-emerald-700">Low</span></div>
+                <video id="examVideo" autoplay muted playsinline class="mt-4 w-full rounded-3xl bg-slate-950" style="transform: scaleX(-1);"></video>
+                <canvas id="examCanvas" class="hidden"></canvas>
+                <div class="mt-4 grid grid-cols-2 gap-3 text-sm"><div class="rounded-2xl bg-slate-50 p-4"><p class="text-slate-500">Faces</p><p id="faceCount" class="mt-1 text-2xl font-black text-ink">0</p></div><div class="rounded-2xl bg-slate-50 p-4"><p class="text-slate-500">Attention</p><p id="attentionScore" class="mt-1 text-2xl font-black text-ink">0%</p></div></div>
+                <div class="mt-4 rounded-2xl bg-slate-50 p-4"><p class="font-semibold text-slate-700">Latest AI findings</p><div id="alertFeed" class="mt-3 space-y-3 text-sm text-slate-600"></div></div>
+            </section>
+            <section class="rounded-[2rem] bg-white/90 p-5 shadow-panel">
+                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-ocean">Support Chat</p>
+                <div id="chatMessages" class="mt-4 h-64 space-y-3 overflow-y-auto rounded-2xl bg-slate-50 p-4 text-sm"></div>
+                <div class="mt-3 flex gap-2"><input id="chatInput" class="flex-1 rounded-2xl border border-slate-200 px-4 py-3" placeholder="Message admin if any issue happens"><button id="sendChatBtn" type="button" class="rounded-2xl bg-ink px-4 py-3 text-sm font-semibold text-white">Send</button></div>
+            </section>
+        </aside>
+    </section>
+</main>
+<script>window.EXAM_ID = {{ exam_id }};</script>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/exam.js"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="mx-auto flex min-h-screen max-w-6xl items-center px-6 py-10">
+    <section class="grid w-full overflow-hidden rounded-[2rem] bg-white/90 shadow-panel lg:grid-cols-[0.95fr_1.05fr]">
+        <div class="bg-ink p-10 text-white">
+            <p class="text-sm font-semibold uppercase tracking-[0.35em] text-orange-300">Onboarding</p>
+            <h1 class="mt-4 text-4xl font-black leading-tight">Register students with password security and face biometrics.</h1>
+            <p class="mt-5 max-w-md text-sm leading-7 text-slate-300">Use the webcam once during signup to store a facial template. The template is never kept as raw video; only an encoding is stored for future verification.</p>
+        </div>
+        <div class="p-8 lg:p-10">
+            <div class="flex items-center justify-between"><div><p class="text-sm font-semibold uppercase tracking-[0.35em] text-ocean">Create account</p><h2 class="mt-2 text-3xl font-black text-ink">Student registration</h2></div><a href="/{% if join_code %}join/{{ join_code }}{% endif %}" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700">Back</a></div>
+            {% if join_code %}<div class="mt-4 rounded-2xl bg-amber-50 p-4 text-sm text-amber-800">You are joining shared exam code <strong>{{ join_code }}</strong>. After registration, you will be redirected to that exam.</div>{% endif %}
+            <form id="registerForm" class="mt-8 space-y-4">
+                <input name="full_name" required placeholder="Full name" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                <input name="email" type="email" required placeholder="Email address" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                <input name="password" type="password" required placeholder="Create password" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                <input type="hidden" name="role" value="student">
+                <div class="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+                    <div class="flex items-center justify-between gap-4"><div><p class="font-semibold text-slate-700">Capture face image</p><p class="text-sm text-slate-500">A fresh image helps the login match succeed.</p></div><button type="button" id="registerCameraBtn" class="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white">Open Camera</button></div>
+                    <video id="registerVideo" autoplay muted playsinline class="mt-4 hidden w-full rounded-2xl bg-slate-900" style="transform: scaleX(-1);"></video>
+                    <canvas id="registerCanvas" class="hidden"></canvas>
+                    <button type="button" id="captureRegisterBtn" class="mt-4 hidden rounded-full bg-glow px-5 py-3 text-sm font-semibold text-white">Capture Face Template</button>
+                    <p id="faceCaptureStatus" class="mt-3 text-sm font-medium text-slate-600"></p>
+                </div>
+                <button class="w-full rounded-2xl bg-slateblue px-5 py-3 text-sm font-semibold text-white">Create student account</button>
+            </form>
+            <p id="registerStatus" class="mt-4 text-sm font-medium"></p>
+        </div>
+    </section>
+</main>
+<script>window.JOIN_CODE = {{ join_code|tojson }};</script>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/register.js"></script>
+{% endblock %}

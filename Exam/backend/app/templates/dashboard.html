@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="mx-auto max-w-7xl px-6 py-8">
+    <header class="flex flex-col gap-4 rounded-[2rem] bg-white/85 p-6 shadow-panel md:flex-row md:items-center md:justify-between">
+        <div><p class="text-sm font-semibold uppercase tracking-[0.35em] text-ocean">Control Center</p><h1 id="dashboardHeading" class="mt-2 text-4xl font-black text-ink">Dashboard</h1><p id="dashboardSubheading" class="mt-2 text-slate-600">Loading your role and available actions...</p></div>
+        <div class="flex flex-wrap gap-3"><button id="logoutBtn" class="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700">Logout</button></div>
+    </header>
+    <section id="adminPanel" class="mt-8 hidden space-y-8">
+        <div class="grid gap-4 md:grid-cols-4" id="analyticsCards"></div>
+        <div class="grid gap-8 lg:grid-cols-[1fr_1.15fr]">
+            <section class="rounded-[2rem] bg-white/85 p-6 shadow-panel">
+                <div class="flex items-center justify-between"><div><p class="text-sm font-semibold uppercase tracking-[0.25em] text-glow">Create Exam</p><h2 class="mt-2 text-2xl font-black text-ink">Publish a new assessment</h2></div><button id="loadSampleExamBtn" class="rounded-full bg-glow px-4 py-2 text-sm font-semibold text-white">Load sample</button></div>
+                <form id="examCreateForm" class="mt-6 space-y-4">
+                    <input name="title" required placeholder="Exam title" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <input name="subject" required placeholder="Subject" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <input name="duration_minutes" type="number" min="5" value="30" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <textarea name="description" rows="3" placeholder="Description" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"></textarea>
+                    <textarea name="instructions" rows="4" placeholder="Instructions for students" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"></textarea>
+                    <textarea name="questions_json" rows="10" placeholder='Questions JSON e.g. [{"id":1,"question":"AI stands for?","type":"mcq","options":["Artificial Intelligence","Automated Internet"],"answer":"Artificial Intelligence"}]' class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 font-mono text-sm"></textarea>
+                    <button class="w-full rounded-2xl bg-slateblue px-5 py-3 text-sm font-semibold text-white">Create exam</button>
+                </form>
+                <p id="examCreateStatus" class="mt-4 text-sm font-medium"></p>
+            </section>
+            <section class="rounded-[2rem] bg-white/85 p-6 shadow-panel"><div class="flex items-center justify-between"><div><p class="text-sm font-semibold uppercase tracking-[0.25em] text-ocean">Live Monitoring</p><h2 class="mt-2 text-2xl font-black text-ink">Active sessions and reports</h2></div></div><div id="sessionMonitorList" class="mt-6 space-y-4"></div></section>
+        </div>
+    </section>
+    <section id="studentPanel" class="mt-8 hidden space-y-8"><div class="rounded-[2rem] bg-white/85 p-6 shadow-panel"><p class="text-sm font-semibold uppercase tracking-[0.25em] text-ocean">Exam Lobby</p><h2 class="mt-2 text-2xl font-black text-ink">Available published exams</h2><div id="studentExamList" class="mt-6 grid gap-4 md:grid-cols-2"></div></div></section>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/dashboard.js"></script>
+{% endblock %}

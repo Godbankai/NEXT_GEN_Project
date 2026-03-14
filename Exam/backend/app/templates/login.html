@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="mx-auto flex min-h-screen max-w-7xl items-center gap-10 px-6 py-10">
+    <section class="hidden flex-1 lg:block">
+        <p class="mb-4 inline-flex rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-ocean shadow-panel">AI based remote exam integrity</p>
+        <h1 class="max-w-2xl text-5xl font-black leading-tight text-ink">Smart exam monitoring that watches fairly, flags risk instantly, and keeps every session review-ready.</h1>
+        <p class="mt-6 max-w-xl text-lg text-slate-600">Built for MCA viva demos, institutional pilots, and production-style remote assessment workflows with face verification, browser lockdown, live analytics, evidence-backed reports, and teacher-student support chat.</p>
+    </section>
+    <section class="w-full max-w-xl rounded-[2rem] bg-white/90 p-8 shadow-panel backdrop-blur">
+        <div class="flex items-center justify-between">
+            <div><p class="text-sm font-semibold uppercase tracking-[0.35em] text-ocean">Secure Login</p><h2 class="mt-2 text-3xl font-black text-ink">Welcome back</h2></div>
+            <a href="/register{% if join_code %}?join_code={{ join_code }}{% endif %}" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700">New user</a>
+        </div>
+        {% if join_code %}
+        <div class="mt-5 rounded-2xl bg-amber-50 p-4 text-sm text-amber-800">You opened a shared exam link. Login or register, and you will be taken to the exam automatically. Join code: <strong>{{ join_code }}</strong></div>
+        {% endif %}
+        <form id="loginForm" class="mt-8 space-y-4">
+            <div><label class="mb-2 block text-sm font-semibold text-slate-700">Email</label><input name="email" type="email" required class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"></div>
+            <div><label class="mb-2 block text-sm font-semibold text-slate-700">Password</label><input name="password" type="password" required class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"></div>
+            <div class="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+                <div class="flex items-center justify-between"><div><p class="font-semibold text-slate-700">Face verification</p><p class="text-sm text-slate-500">Capture a live frame for biometric login.</p></div><button type="button" id="startCameraBtn" class="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white">Open Camera</button></div>
+                <video id="authVideo" autoplay muted playsinline class="mt-4 hidden w-full rounded-2xl bg-slate-900" style="transform: scaleX(-1);"></video>
+                <canvas id="authCanvas" class="hidden"></canvas>
+                <button type="button" id="faceLoginBtn" class="mt-4 hidden rounded-full bg-ocean px-5 py-3 text-sm font-semibold text-white">Login With Face + Password</button>
+            </div>
+            <button class="w-full rounded-2xl bg-slateblue px-5 py-3 text-sm font-semibold text-white">Login With Password</button>
+        </form>
+        <div class="mt-6 rounded-2xl bg-slate-100 p-4 text-sm text-slate-600"><p class="font-semibold text-slate-700">Default admin for demo</p><p>Email: admin@example.com</p><p>Password: Admin@123</p></div>
+        <p id="loginStatus" class="mt-4 text-sm font-medium"></p>
+    </section>
+</main>
+<script>window.JOIN_CODE = {{ join_code|tojson }};</script>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/auth.js"></script>
+{% endblock %}
