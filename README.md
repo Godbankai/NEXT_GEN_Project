@@ -1,10 +1,10 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=320&color=0:0F0C29,50:302B63,100:24243E&text=AI%20Based%20Smart%20Exam%20Monitoring%20%26%20Proctoring%20System&fontSize=35&fontColor=ffffff&animation=fadeIn&fontAlignY=40"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=350&color=0:0F0C29,50:302B63,100:24243E&text=AI%20SMART%20EXAM%20MONITORING%20%26%20PROCTORING%20SYSTEM&fontColor=ffffff&fontSize=32&animation=fadeIn&fontAlignY=40"/>
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=24&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=1000&lines=AI+Powered+Online+Exam+Monitoring;Face+Recognition+%7C+Eye+Tracking;Head+Pose+Estimation+%7C+Tab+Detection;FastAPI+%7C+OpenCV+%7C+MediaPipe;Secure+and+Intelligent+Remote+Proctoring"/>
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=24&duration=2500&pause=1000&color=00D9FF&center=true&vCenter=true&width=1000&lines=AI+Powered+Remote+Exam+Proctoring;Face+Recognition+%7C+Eye+Tracking;Head+Pose+Estimation+%7C+Object+Detection;FastAPI+%7C+OpenCV+%7C+MediaPipe;Real-Time+Behavior+Analysis;Secure+Online+Examinations"/>
 
 <br><br>
 
@@ -17,8 +17,8 @@
 <br>
 
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 ![AI](https://img.shields.io/badge/AI-Computer%20Vision-purple?style=for-the-badge)
+![MCA Project](https://img.shields.io/badge/LPU-MCA%20Major%20Project-blue?style=for-the-badge)
 
 </div>
 
@@ -26,103 +26,99 @@
 
 # 🌌 Project Overview
 
-AI Based Smart Exam Monitoring & Proctoring System is an intelligent next-generation online examination platform designed to ensure academic integrity, fairness, and transparency during remote examinations.
+AI Based Smart Exam Monitoring & Proctoring System is a next-generation intelligent online examination platform developed to ensure academic integrity, transparency, and fairness in remote examinations.
 
-The platform combines Artificial Intelligence, Computer Vision, Face Recognition, Eye Tracking, Head Pose Estimation, Browser Monitoring, and Behaviour Analysis to detect suspicious activities in real time.
+The platform combines Artificial Intelligence, Computer Vision, Face Recognition, Eye Tracking, Head Pose Estimation, Browser Monitoring, Audio Analysis, and Behavioral Intelligence to detect suspicious activities in real time.
 
-The system continuously monitors students through webcam streams and browser events, identifies potential examination violations, generates evidence-based reports, and provides administrators with complete control over examination sessions.
-
-Unlike traditional online examination systems, this platform provides automated invigilation using advanced AI models and biometric authentication, significantly reducing manual supervision efforts.
+Unlike traditional online examination systems, this platform continuously monitors students through webcam streams, browser events, and behavior patterns to identify cheating attempts, impersonation, unauthorized assistance, mobile phone usage, suspicious objects, and abnormal movements.
 
 ---
 
-# 🎯 Problem Statement
+# ✨ Key Highlights
 
-Online examinations face several major challenges:
+✅ AI-Powered Real-Time Monitoring
 
-- Students switching browser tabs to search answers.
-- Use of mobile phones during exams.
-- Presence of unauthorized persons.
-- Student impersonation.
-- Lack of real-time monitoring.
-- Manual review consuming hours of effort.
-- No structured evidence collection system.
+✅ Face Recognition Authentication
 
-This project addresses these issues using AI-powered monitoring, biometric verification, and automated violation detection.
+✅ Eye Gaze Tracking System
+
+✅ Head Pose Estimation
+
+✅ Browser Tab Detection
+
+✅ Mobile Phone Detection
+
+✅ Suspicious Object Detection
+
+✅ Audio Monitoring
+
+✅ Evidence Screenshot Capture
+
+✅ Automated Violation Reports
+
+✅ Live Admin Dashboard
+
+✅ Secure JWT Authentication
 
 ---
 
 # 🚀 Core Features
 
-## 👤 Face Recognition System
+## 👤 Biometric Authentication
 
-- Biometric Student Authentication
 - Face Encoding Generation
-- Face Matching Verification
-- Identity Validation
-- Multiple Face Detection
-- No Face Detection
+- Identity Verification
+- Face Matching System
+- Anti-Impersonation Security
+- Real-Time Presence Validation
 
 ---
 
 ## 👀 Eye Gaze Tracking
 
-- Real-Time Eye Monitoring
-- Attention Analysis
+- Attention Monitoring
+- Eye Movement Analysis
 - Looking Away Detection
-- Suspicious Eye Movement Detection
-- Behaviour Scoring
-
----
-
-## 🧠 Head Pose Estimation
-
-- Left Head Turn Detection
-- Right Head Turn Detection
-- Pose Analysis
-- Behaviour Monitoring
+- Behavioral Tracking
 - Alert Generation
 
 ---
 
-## 🌐 Browser Monitoring
+## 🧠 Head Pose Analysis
+
+- Head Turn Detection
+- Face Orientation Monitoring
+- Suspicious Behavior Recognition
+- Real-Time AI Analysis
+
+---
+
+## 📱 Mobile Phone Detection
+
+- Unauthorized Device Detection
+- Suspicious Object Monitoring
+- Evidence Logging
+- Automatic Alert Generation
+
+---
+
+## 🌐 Browser Security Monitoring
 
 - Tab Switching Detection
 - Fullscreen Exit Detection
-- Browser Focus Monitoring
+- Focus Loss Tracking
 - Security Event Logging
-- Real-Time Alerts
 
 ---
 
-## 📱 Object Detection
+## 📊 Admin Control Center
 
-- Mobile Phone Detection
-- Suspicious Object Detection
-- Evidence Collection
-- Security Score Updates
-
----
-
-## 🔒 Security Engine
-
-- JWT Authentication
-- Bcrypt Password Hashing
-- Session Management
-- Role-Based Access Control
-- Secure API Communication
-
----
-
-## 📊 Admin Dashboard
-
-- Live Monitoring
-- Session Analytics
-- Student Management
+- Session Monitoring
+- Student Analytics
 - Exam Control
-- Lock/Unlock Sessions
-- PDF Report Downloads
-- Live Chat Support
+- Report Generation
+- Session Resume/Lock
+- Live Communication
 
 ---
 
@@ -130,84 +126,86 @@ This project addresses these issues using AI-powered monitoring, biometric verif
 
 ```text
 Student Registration
-          │
-          ▼
-Face Encoding Generation
-          │
-          ▼
-Secure Login Verification
-          │
-          ▼
+        │
+        ▼
+Face Verification
+        │
+        ▼
+JWT Authentication
+        │
+        ▼
 Exam Session Start
-          │
-          ▼
-Real-Time Monitoring Engine
-          │
-          ▼
-┌─────────────────────┐
-│ Face Recognition    │
-│ Eye Tracking        │
-│ Head Pose Analysis  │
-│ Browser Monitoring  │
-│ Object Detection    │
-└─────────────────────┘
-          │
-          ▼
-Violation Detection Engine
-          │
-          ▼
-Suspicious Score System
-          │
-          ▼
-Auto Lock / Alerts
-          │
-          ▼
-Evidence Collection
-          │
-          ▼
+        │
+        ▼
+AI Monitoring Engine
+        │
+ ┌──────┼──────┐
+ ▼      ▼      ▼
+Face   Eye    Head
+AI    Tracking Pose
+ │      │      │
+ └──────┼──────┘
+        ▼
+Violation Detection
+        │
+        ▼
+Scoring Engine
+        │
+        ▼
+Auto Lock System
+        │
+        ▼
+Evidence Capture
+        │
+        ▼
 PDF Report Generation
-          │
-          ▼
+        │
+        ▼
 Admin Dashboard
 ```
 
-# ⚙ Technology Stack
+# ⚙️ Technology Stack
 
 ### Frontend
+
 - HTML5
 - Tailwind CSS
 - JavaScript
 - Jinja2 Templates
 
 ### Backend
+
 - FastAPI
 - Python 3.10+
 - SQLAlchemy ORM
 - SQLite Database
 
 ### AI & Computer Vision
+
 - OpenCV
 - MediaPipe FaceMesh
 - face_recognition
 - NumPy
 
 ### Security
+
 - JWT Authentication
 - Bcrypt Password Hashing
 - Face Encoding Verification
 
 ### Reporting
+
 - ReportLab PDF Generator
 
 ---
 
-# 📈 AI Monitoring & Scoring System
+# 📈 Suspicious Scoring System
 
 | Activity | Score |
 |----------|--------|
 | Multiple Faces | +30 |
-| Tab Switch | +22 |
 | Mobile Phone | +24 |
+| Tab Switching | +22 |
 | Suspicious Object | +20 |
 | No Face Detected | +18 |
 | Head Pose Alert | +10 |
@@ -219,7 +217,7 @@ Admin Dashboard
 
 ```text
 Suspicious Score >= 60
-        OR
+OR
 3 Consecutive Warnings
 
 ⇒ Session Automatically Locked
@@ -227,68 +225,7 @@ Suspicious Score >= 60
 
 ---
 
-# 🔌 API Endpoints
-
-### Authentication
-
-```http
-POST /api/auth/register
-POST /api/auth/login
-```
-
-### Exams
-
-```http
-POST /api/exams
-POST /api/exams/sessions/start
-POST /api/exams/sessions/{id}/submit
-```
-
-### Proctoring
-
-```http
-POST /api/proctor/analyze-frame
-POST /api/proctor/analyze-audio
-POST /api/proctor/event
-```
-
-### Admin
-
-```http
-GET  /api/admin/sessions
-POST /api/admin/sessions/{id}/resume
-GET  /api/admin/reports/{id}.pdf
-```
-
----
-
-# 📊 Performance Metrics
-
-| Module | Accuracy |
-|----------|----------|
-| Face Recognition | 97% |
-| Eye Tracking | 95% |
-| Head Pose Detection | 94% |
-| Browser Monitoring | 100% |
-| Violation Detection | 96% |
-| PDF Reporting | 100% |
-
----
-
-# 🚀 Future Enhancements
-
-- YOLOv8 Object Detection
-- Speaker Verification
-- AWS Cloud Deployment
-- Mobile Application
-- LMS Integration
-- Deep Learning Behaviour Prediction
-- Real-Time Notifications
-- Advanced Analytics Dashboard
-
----
-
-# 👨‍💻 Team Members
+# 👨‍💻 Team
 
 | Name | Role |
 |--------|--------|
@@ -300,22 +237,8 @@ GET  /api/admin/reports/{id}.pdf
 
 ---
 
-# ⭐ Support
-
-If you found this project useful:
-
-⭐ Star this repository
-
-🍴 Fork the repository
-
-📢 Share with others
-
----
-
 <div align="center">
 
-### Developed with ❤️ by Team NEXT_GEN
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:0F0C29,50:302B63,100:24243E"/>
+### ⭐ Secure Exams • Smart Monitoring • AI Intelligence
 
 </div>
